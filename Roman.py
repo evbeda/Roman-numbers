@@ -7,8 +7,6 @@ def roman(numero):
 
     if not isinstance(numero, int):
         return "Only int numbers"
-
-
     numeros = {
         1000 :'M',
         900 :'CM',
