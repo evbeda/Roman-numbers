@@ -1,4 +1,3 @@
-
 def decimal(roman):
     roma = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
     cadena = list(roman)
@@ -11,7 +10,7 @@ def decimal(roman):
         for letra in cadena:
             if len(cadena) != count + 1:
                 if len(cadena) > 0:
-                    if roma[letra] < roma[cadena[count+1]]:
+                    if roma[letra] < roma[cadena[count + 1]]:
                         result -= roma[letra]
                     else:
                         result += roma[letra]
@@ -21,5 +20,3 @@ def decimal(roman):
                 result += roma[letra]
             count += 1
     return result
-
-    
