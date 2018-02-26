@@ -1,8 +1,9 @@
-## importar la clase de test
+# importar la clase de test
 import unittest
 from Roman import roman
 from roman_to_decimal import decimal
-from romandecimalroman import  roman_to_roman
+from romandecimalroman import roman_to_roman
+
 
 class TestRomanToInt(unittest.TestCase):
 
@@ -12,7 +13,7 @@ class TestRomanToInt(unittest.TestCase):
 
     def test_romandecimal_two(self):
         self.assertEqual(decimal('II'), 2)
-    
+
     def test_romandecimal_three(self):
         self.assertEqual(decimal('III'), 3)
 
@@ -31,9 +32,9 @@ class TestRomanToInt(unittest.TestCase):
     def test_wrong_letter(self):
         self.assertEqual(decimal('CCXASDASHDUASBD'), 'Input is not a roman number')
 
-    ## definir primer test
-    
-class Roman_to_decimal_to_roman(unittest.TestCase):
+    # definir primer test
+
+    class Roman_to_decimal_to_roman(unittest.TestCase):
     def test_all(self):
         for number in xrange(1, 4):
             roman_result = roman(number)
