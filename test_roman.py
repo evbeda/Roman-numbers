@@ -11,14 +11,21 @@ class TestRoman(unittest.TestCase):
         resultado = roman(1)
         self.assertEqual(resultado, 'I')
 
-    def test_roman_decimal_roman_ten(self):
-        resultado = roman(10)
-        self.assertEqual(resultado, 'X')
+    def test_roman_decimal_roman_two(self):
+        resultado = roman(2)
+        self.assertEqual(resultado, 'II')
+
+    def test_roman_decimal_roman_four(self):
+        resultado = roman(4)
+        self.assertEqual(resultado, 'IV')
+    # def test_roman_decimal_roman_ten(self):
+    #     resultado = roman(10)
+    #     self.assertEqual(resultado, 'X')
 
 
-    def test_roman_decimal_roman_845(self):
-        resultado = roman(845)
-        self.assertEqual(resultado, 'DCCCXLV') 
+    # def test_roman_decimal_roman_845(self):
+    #     resultado = roman(845)
+    #     self.assertEqual(resultado, 'DCCCXLV') 
 
     def test_roman_decimal_roman_minor(self):
         resultado = roman(-1)
