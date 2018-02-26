@@ -4,7 +4,8 @@ def decimal(roman):
     cadena = list(roman)
     result = 0
     count = 0
-    a = ['A', 'B', 'E', 'F', 'G', 'H', 'J', 'K', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'W', 'Y', 'Z']
+    a = ['A', 'B', 'E', 'F', 'G', 'H', 'J', 'K', 'N',
+         'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'W', 'Y', 'Z']
     if any(x in roman for x in a):
         result = 'Input is not a roman number'
     else:
@@ -21,5 +22,3 @@ def decimal(roman):
                 result += roma[letra]
             count += 1
     return result
-
-    
