@@ -25,7 +25,7 @@ def decimal(roman):
         'Z',
     ]
     if any(x in roman for x in a):
-        result = 'Input is not a roman number'
+        raise Exception('Input is not a roman number')
     else:
         for letra in cadena:
             if len(cadena) != count + 1:

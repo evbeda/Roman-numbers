@@ -29,8 +29,10 @@ class TestRomanToInt(unittest.TestCase):
         self.assertEqual(decimal('MMMCMXCIX'), 3999)
 
     def test_wrong_letter(self):
-        self.assertEqual(
+        with self.assertRaises(Exception) as e:
             decimal('CCXASDASHDUASBD'),
+        self.assertEqual(
+            e.exception.message,
             'Input is not a roman number'
         )
 

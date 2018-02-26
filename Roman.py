@@ -1,12 +1,12 @@
 def roman(numero):
     if numero < 1:
-        return "Can't convert to roman number!"
+        raise Exception("Can't convert to roman number!")
 
     if numero > 3999:
-        return "Not a valid number"
+        raise Exception("Not a valid number")
 
     if not isinstance(numero, int):
-        return "Only int numbers"
+        raise Exception("Only int numbers")
 
     numeros = {
         1000: 'M', 900: 'CM', 500: 'D', 400: 'CD', 100: 'C', 90: 'XC', 50: 'L',
