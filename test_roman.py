@@ -3,8 +3,9 @@
 import unittest
 from Roman import roman
 from roman_to_decimal import decimal
+from romandecimalroman import  roman_to_roman
 
-## declaracion del test
+# declaracion del test
 class TestRoman(unittest.TestCase):
 
     def test_roman_decimal_roman_one(self):
@@ -18,10 +19,14 @@ class TestRoman(unittest.TestCase):
     def test_roman_decimal_roman_four(self):
         resultado = roman(4)
         self.assertEqual(resultado, 'IV')
+        
     def test_roman_decimal_roman_ten(self):
         resultado = roman(10)
         self.assertEqual(resultado, 'X')
 
+    def test_roman_decimal_roman_five(self):
+        resultado = roman(5)
+        self.assertEqual(resultado, 'V')
 
     def test_roman_decimal_roman_845(self):
         resultado = roman(845)
@@ -69,6 +74,9 @@ class TestRoman(unittest.TestCase):
 
     ## definir primer test
     
+class Roman_to_decimal_to_roman(unittest.TestCase):
+    def test_I(self):
+        self.assertEqual(roman_to_roman('I'),'I')
 
 
 if __name__ == "__main__":

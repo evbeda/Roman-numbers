@@ -6,7 +6,6 @@ def decimal(roman):
     count = 0
     a = ['A', 'B', 'E', 'F', 'G', 'H', 'J', 'K', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'W', 'Y', 'Z']
     if any(x in roman for x in a):
-        print 'something'
         result = 'Input is not a roman number'
     else:
         for letra in cadena:
@@ -22,3 +21,5 @@ def decimal(roman):
                 result += roma[letra]
             count += 1
     return result
+
+    
