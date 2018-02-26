@@ -31,6 +31,10 @@ class TestRoman(unittest.TestCase):
         resultado = roman(-1)
         self.assertEqual(resultado, "Can't convert to roman number!")
 
+    def test_roman_decimal_roman_not_type(self):
+        resultado = roman(10.5)
+        self.assertEqual(resultado, "Only int numbers")   
+
     def test_romandecimal_one(self):
         self.assertEqual(decimal('I'), 1)
 
