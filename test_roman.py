@@ -2,6 +2,7 @@
 ## importar la clase de test
 import unittest
 from Roman import roman
+from roman_to_decimal import decimal
 
 ## declaracion del test
 class TestRoman(unittest.TestCase):
@@ -28,7 +29,31 @@ class TestRoman(unittest.TestCase):
 
     def test_roman_decimal_roman_minor(self):
         resultado = roman(-1)
-        self.assertEqual(resultado, None)   
+        self.assertEqual(resultado, None)
+
+    def test_romandecimal_one(self):
+        self.assertEqual(decimal('I'), 1)
+
+    def test_romandecimal_two(self):
+        self.assertEqual(decimal('II'), 2)
+    
+    def test_romandecimal_three(self):
+        self.assertEqual(decimal('III'), 3)
+
+    def test_romandecimal_four(self):
+        self.assertEqual(decimal('IV'), 4)
+
+    def test_romandecimal_nine(self):
+        self.assertEqual(decimal('IX'), 9)
+
+    def test_romandecimal_845(self):
+        self.assertEqual(decimal('DCCCXLV'), 845)
+
+    def test_romandecimal_3999(self):
+        self.assertEqual(decimal('MMMCMXCIX'), 3999)
+
+    def test_wrong_letter(self):
+        self.assertEqual(decimal('CCXASDASHDUASBD'), 'Input is not a roman number')
 
     ## definir primer test
     
