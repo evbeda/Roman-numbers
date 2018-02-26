@@ -5,6 +5,7 @@ from test_roman_to_int import (
 )
 from test_roman import TestRoman
 
+
 def suite():
     """
         Gather all the tests from this module in a test suite.
