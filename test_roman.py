@@ -1,10 +1,12 @@
 
-## importar la clase de test
+# importar la clase de test
 import unittest
 from Roman import roman
 from roman_to_decimal import decimal
 
-## declaracion del test
+# declaracion del test
+
+
 class TestRoman(unittest.TestCase):
 
     def test_roman_decimal_roman_one(self):
@@ -18,14 +20,14 @@ class TestRoman(unittest.TestCase):
     def test_roman_decimal_roman_four(self):
         resultado = roman(4)
         self.assertEqual(resultado, 'IV')
+
     def test_roman_decimal_roman_ten(self):
         resultado = roman(10)
         self.assertEqual(resultado, 'X')
 
-
     def test_roman_decimal_roman_845(self):
         resultado = roman(845)
-        self.assertEqual(resultado, 'DCCCXLV') 
+        self.assertEqual(resultado, 'DCCCXLV')
 
     def test_roman_decimal_roman_minor(self):
         resultado = roman(-1)
@@ -33,14 +35,14 @@ class TestRoman(unittest.TestCase):
 
     def test_roman_decimal_roman_not_type(self):
         resultado = roman(10.5)
-        self.assertEqual(resultado, "Only int numbers")   
+        self.assertEqual(resultado, "Only int numbers")
 
     def test_romandecimal_one(self):
         self.assertEqual(decimal('I'), 1)
 
     def test_romandecimal_two(self):
         self.assertEqual(decimal('II'), 2)
-    
+
     def test_romandecimal_three(self):
         self.assertEqual(decimal('III'), 3)
 
@@ -57,7 +59,8 @@ class TestRoman(unittest.TestCase):
         self.assertEqual(decimal('MMMCMXCIX'), 3999)
 
     def test_wrong_letter(self):
-        self.assertEqual(decimal('CCXASDASHDUASBD'), 'Input is not a roman number')
+        self.assertEqual(decimal('CCXASDASHDUASBD'),
+                         'Input is not a roman number')
 
     def test_roman_decimal_3999(self):
         resultado = roman(3999)
@@ -65,10 +68,9 @@ class TestRoman(unittest.TestCase):
 
     def test_roman_decimal_4000(self):
         resultado = roman(4000)
-        self.assertEqual(resultado, 'Not a valid number')   
+        self.assertEqual(resultado, 'Not a valid number')
 
-    ## definir primer test
-    
+    # definir primer test
 
 
 if __name__ == "__main__":
