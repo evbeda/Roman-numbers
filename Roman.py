@@ -5,6 +5,9 @@ def roman(numero):
     if numero > 3999:
         return "Not a valid number"
 
+    if not isinstance(numero, int):
+        return "Only int numbers"
+
 
     numeros = {
         1000 :'M',
