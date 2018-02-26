@@ -19,7 +19,7 @@ class TestRoman(unittest.TestCase):
     def test_roman_decimal_roman_four(self):
         resultado = roman(4)
         self.assertEqual(resultado, 'IV')
-        
+
     def test_roman_decimal_roman_ten(self):
         resultado = roman(10)
         self.assertEqual(resultado, 'X')
@@ -30,7 +30,7 @@ class TestRoman(unittest.TestCase):
 
     def test_roman_decimal_roman_845(self):
         resultado = roman(845)
-        self.assertEqual(resultado, 'DCCCXLV') 
+        self.assertEqual(resultado, 'DCCCXLV')
 
     def test_roman_decimal_roman_minor(self):
         resultado = roman(-1)
@@ -38,14 +38,14 @@ class TestRoman(unittest.TestCase):
 
     def test_roman_decimal_roman_not_type(self):
         resultado = roman(10.5)
-        self.assertEqual(resultado, "Only int numbers")   
+        self.assertEqual(resultado, "Only int numbers")
 
     def test_romandecimal_one(self):
         self.assertEqual(decimal('I'), 1)
 
     def test_romandecimal_two(self):
         self.assertEqual(decimal('II'), 2)
-    
+
     def test_romandecimal_three(self):
         self.assertEqual(decimal('III'), 3)
 
@@ -70,10 +70,10 @@ class TestRoman(unittest.TestCase):
 
     def test_roman_decimal_4000(self):
         resultado = roman(4000)
-        self.assertEqual(resultado, 'Not a valid number')   
+        self.assertEqual(resultado, 'Not a valid number')
 
     ## definir primer test
-    
+
 class Roman_to_decimal_to_roman(unittest.TestCase):
     def test_I(self):
         self.assertEqual(roman_to_roman('I'),'I')
