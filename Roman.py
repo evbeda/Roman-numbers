@@ -1,38 +1,32 @@
 def roman(numero):
-	if numero < 1:
-		return None
+    if numero < 1:
+        return "Can't convert to roman number!"
 
-	numeros = {'1': 'I', '4':'IV', '5' : 'V', '9':'IX', '10': 'X',
-	 '40':'XL','50': 'L'}
-	
-
-	# if numero == 1 : 
-	# 	return 'I' 
-	# elif numero == 2 :
-	# 	return 'X' 
-
-	# elif numero == 10 :
-	# 	return 'X' 
-	# elif numero == 845 :
-	# 	return 'DCCCXLV'
-	# for x in numeros(1,10):
-	# 	pass
+    if numero > 3999:
+        return "Not a valid number"
 
 
-	#for key, value in numeros.iteritems():
-		#if  numero == 1:
-		#	return 'I'
-	if numero >= 1 and numero < 4:
-		return numeros[str(1)] * numero
+    numeros = {
+        1000 :'M',
+        900 :'CM',
+        500 :'D',
+        400 :'CD',
+        100 :'C',
+        90 : 'XC',
+        50 : 'L',
+        40 : 'XL',
+        10: 'X',
+        9 : 'IX',
+        5 : 'V',
+        4 : 'IV',
+        1 : 'I',
+    }
+    roman = ''
 
-	if numero == 4:
-		return numeros[str(4)]
-
-	#if numero > 5 and numero < 9:
-
-
-
-
-
-
-
+    for key in sorted(numeros.keys(), reverse=True):
+        value = numeros[key]
+        if numero >= key:
+            cant = numero // key
+            roman += value * cant
+            numero -= cant * key
+    return roman
