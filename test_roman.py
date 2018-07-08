@@ -33,12 +33,21 @@ class TestRoman(unittest.TestCase):
         self.assertEqual(resultado, 'DCCCXLV')
 
     def test_roman_decimal_roman_minor(self):
-        resultado = roman(-1)
-        self.assertEqual(resultado, "Can't convert to roman number!")
+        with self.assertRaises(Exception) as e:
+            roman(-1)
+        self.assertEqual(
+            e.exception.message,
+            "Can't convert to roman number!",
+        )
 
     def test_roman_decimal_roman_not_type(self):
-        resultado = roman(10.5)
-        self.assertEqual(resultado, "Only int numbers")
+        with self.assertRaises(Exception) as e:
+            roman(10.5)
+
+        self.assertEqual(
+            e.exception.message,
+            "Only int numbers",
+        )
 
     def test_romandecimal_one(self):
         self.assertEqual(decimal('I'), 1)
@@ -62,15 +71,24 @@ class TestRoman(unittest.TestCase):
         self.assertEqual(decimal('MMMCMXCIX'), 3999)
 
     def test_wrong_letter(self):
-        self.assertEqual(decimal('CCXASDASHDUASBD'), 'Input is not a roman number')
+        with self.assertRaises(Exception) as e:
+            decimal('CCXASDASHDUASBD'),
+        self.assertEqual(
+            e.exception.message,
+            'Input is not a roman number',
+        )
 
     def test_roman_decimal_3999(self):
         resultado = roman(3999)
         self.assertEqual(resultado, 'MMMCMXCIX')
 
     def test_roman_decimal_4000(self):
-        resultado = roman(4000)
-        self.assertEqual(resultado, 'Not a valid number')
+        with self.assertRaises(Exception) as e:
+            roman(4000)
+        self.assertEqual(
+            e.exception.message,
+            'Not a valid number',
+        )
 
     ## definir primer test
 
